@@ -1,7 +1,9 @@
 import { ethers } from "ethers";
 import CertificateNFTABI from "./CertificateNFT.json";
 
-const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
+const contractAddress = import.meta.env.VITE_CONTRACT_ADDRESS;
+console.log(contractAddress);
+
 
 export const getContract = async () => {
   if (!window.ethereum) {
