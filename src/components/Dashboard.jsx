@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { getContract } from "../utils/contract";
 import axios from "axios";
@@ -18,16 +19,26 @@ const Dashboard = ({ account, isInstitution }) => {
         const balance = await contract.balanceOf(account);
         const ownedNFTs = [];
 
+        const pinataJWT = import.meta.env.VITE_PINATA_JWT;
+        if (!pinataJWT) {
+          throw new Error('Pinata JWT is not defined. Check VITE_PINATA_JWT in .env');
+        }
+
         for (let i = 0; i < balance; i++) {
           const tokenId = await contract.tokenOfOwnerByIndex(account, i);
           const tokenURI = await contract.tokenURI(tokenId);
-          const response = await axios.get(tokenURI);
+          console.log(`Fetching tokenURI: ${tokenURI}`); // Debug log
+          const response = await axios.get(tokenURI, {
+            headers: {
+              Authorization: `Bearer ${pinataJWT}`,
+            },
+          });
           ownedNFTs.push({ tokenId: tokenId.toString(), metadata: response.data });
         }
 
         setNfts(ownedNFTs);
       } catch (error) {
-        console.error("Error fetching NFTs:", error);
+        console.error("Error fetching NFTs:", error.response?.data || error.message);
       }
       setLoading(false);
     };

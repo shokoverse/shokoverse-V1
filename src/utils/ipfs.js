@@ -1,27 +1,45 @@
 import axios from 'axios';
 
-const pinataApiKey = import.meta.env.PINATA_API_KEY;
-const pinataApiSecret = import.meta.env.PINATA_API_SECRET;
+const pinataJWT = import.meta.env.VITE_PINATA_JWT;
+console.log('Pinata JWT:', pinataJWT);
 
 export const uploadToIPFS = async (image, certificateName, category, recipient) => {
   try {
+    // Validate inputs
+    if (!image || !certificateName || !category || !recipient) {
+      throw new Error('Missing required parameters for IPFS upload');
+    }
+    if (!pinataJWT) {
+      throw new Error('Pinata JWT is not defined. Check VITE_PINATA_JWT in .env');
+    }
+
+    // Upload image
     const imageFormData = new FormData();
     imageFormData.append('file', image);
-    imageFormData.append('pinataOptions', JSON.stringify({ cidVersion: 1 }));
-    imageFormData.append('pinataMetadata', JSON.stringify({ name: `${certificateName}_image` }));
+    imageFormData.append('name', `${certificateName}_image`);
+    imageFormData.append('keyvalues', JSON.stringify({
+      env: 'prod',
+      type: 'certificate'
+    }));
+    imageFormData.append('network', 'public');
 
     const imageResponse = await axios.post(
-      'https://api.pinata.cloud/pinning/pinFileToIPFS',
+      '/pinata/v3/files',
       imageFormData,
       {
         headers: {
-          'pinata_api_key': pinataApiKey,
-          'pinata_secret_api_key': pinataApiSecret,
+          Authorization: `Bearer ${pinataJWT}`,
+          'Content-Type': 'multipart/form-data',
         },
       }
     );
-    const imageUrl = `https://gateway.pinata.cloud/ipfs/${imageResponse.data.IpfsHash}`;
+    const imageData = imageResponse.data;
+    if (!imageData.data || !imageData.data.cid) {
+      throw new Error('Failed to upload image to Pinata: ' + JSON.stringify(imageData));
+    }
+    const imageUrl = `${imageData.data.cid}`;
 
+    // Create metadata
     const metadata = {
       name: certificateName,
       description: `Certificate for ${recipient}`,
@@ -32,133 +50,46 @@ export const uploadToIPFS = async (image, certificateName, category, recipient) 
       ],
     };
 
+    // Upload metadata
+    const metadataFile = new File(
+      [JSON.stringify(metadata)],
+      `${certificateName}_metadata.json`,
+      { type: 'application/json' }
+    );
     const metadataFormData = new FormData();
-    metadataFormData.append('file', new Blob([JSON.stringify(metadata)], { type: 'application/json' }));
-    metadataFormData.append('pinataOptions', JSON.stringify({ cidVersion: 1 }));
-    metadataFormData.append('pinataMetadata', JSON.stringify({ name: `${certificateName}_metadata` }));
+    metadataFormData.append('file', metadataFile);
+    metadataFormData.append('name', `${certificateName}_metadata.json`);
+    metadataFormData.append('keyvalues', JSON.stringify({
+      env: 'prod',
+      type: 'certificate'
+    }));
+    metadataFormData.append('network', 'public');
 
     const metadataResponse = await axios.post(
-      'https://api.pinata.cloud/pinning/pinFileToIPFS',
+      '/pinata/v3/files',
       metadataFormData,
       {
         headers: {
-          'pinata_api_key': pinataApiKey,
-          'pinata_secret_api_key': pinataApiSecret,
+          Authorization: `Bearer ${pinataJWT}`,
+          'Content-Type': 'multipart/form-data',
         },
       }
     );
+    const metadataData = metadataResponse.data;
+    if (!metadataData.data || !metadataData.data.cid) {
+      throw new Error('Failed to upload metadata to Pinata: ' + JSON.stringify(metadataData));
+    }
 
-    return `https://gateway.pinata.cloud/ipfs/${metadataResponse.data.IpfsHash}`;
+    console.log('Upload successful, CID:', metadataData.data.cid);
+    return `${metadataData.data.cid}`;
   } catch (error) {
-    console.error('Error uploading to IPFS via Pinata:', error);
+    if (error.response) {
+      console.error('Pinata API error:', error.response.data);
+    } else if (error.request) {
+      console.error('No response from Pinata:', error.request);
+    } else {
+      console.error('Error setting up request:', error.message);
+    }
     throw error;
   }
 };
-
-
-
-
-
-// import axios from 'axios';
-
-// const pinataApiKey = import.meta.env.PINATA_API_KEY;
-// const pinataApiSecret = import.meta.env.PINATA_API_SECRET;
-
-// export const uploadToIPFS = async (image, certificateName, category, recipient) => {
-//   try {
-//     // Upload image to Pinata
-//     const imageFormData = new FormData();
-//     imageFormData.append('file', image);
-//     imageFormData.append('pinataOptions', JSON.stringify({ cidVersion: 1 }));
-//     imageFormData.append('pinataMetadata', JSON.stringify({ name: `${certificateName}_image` }));
-
-//     const imageResponse = await axios.post(
-//       'https://api.pinata.cloud/pinning/pinFileToIPFS',
-//       imageFormData,
-//       {
-//         headers: {
-//           'pinata_api_key': pinataApiKey,
-//           'pinata_secret_api_key': pinataApiSecret,
-//         },
-//       }
-//     );
-//     const imageUrl = `https://ipfs.infura.io/ipfs/${imageResponse.data.IpfsHash}`;
-
-//     // Create metadata
-//     const metadata = {
-//       name: certificateName,
-//       description: `Certificate for ${recipient}`,
-//       image: imageUrl,
-//       attributes: [
-//         { trait_type: 'Category', value: category },
-//         { trait_type: 'Recipient', value: recipient },
-//       ],
-//     };
-
-//     // Upload metadata to Pinata
-//     const metadataFormData = new FormData();
-//     metadataFormData.append('file', new Blob([JSON.stringify(metadata)], { type: 'application/json' }));
-//     metadataFormData.append('pinataOptions', JSON.stringify({ cidVersion: 1 }));
-//     metadataFormData.append('pinataMetadata', JSON.stringify({ name: `${certificateName}_metadata` }));
-
-//     const metadataResponse = await axios.post(
-//       'https://api.pinata.cloud/pinning/pinFileToIPFS',
-//       metadataFormData,
-//       {
-//         headers: {
-//           'pinata_api_key': pinataApiKey,
-//           'pinata_secret_api_key': pinataApiSecret,
-//         },
-//       }
-//     );
-
-//     return `https://ipfs.infura.io/ipfs/${metadataResponse.data.IpfsHash}`;
-//   } catch (error) {
-//     console.error('Error uploading to IPFS via Pinata:', error);
-//     throw error;
-//   }
-// };
-
-
-
-
-
-
-
-
-
-// import { create } from "ipfs-http-client";
-
-// const projectId = import.meta.env.VITE_INFURA_PROJECT_ID;
-// const projectSecret = import.meta.env.VITE_INFURA_PROJECT_SECRET;
-// const auth = `Basic ${btoa(`${projectId}:${projectSecret}`)}`;
-
-// const client = create({
-//   host: "ipfs.infura.io",
-//   port: 5001,
-//   protocol: "https",
-//   headers: { authorization: auth },
-// });
-
-// export const uploadToIPFS = async (image, certificateName, category, recipient) => {
-//   try {
-//     const imageAdded = await client.add(image);
-//     const imageUrl = `https://ipfs.infura.io/ipfs/${imageAdded.path}`;
-
-//     const metadata = {
-//       name: certificateName,
-//       description: `Certificate for ${recipient}`,
-//       image: imageUrl,
-//       attributes: [
-//         { trait_type: "Category", value: category },
-//         { trait_type: "Recipient", value: recipient },
-//       ],
-//     };
-
-//     const metadataAdded = await client.add(JSON.stringify(metadata));
-//     return `https://ipfs.infura.io/ipfs/${metadataAdded.path}`;
-//   } catch (error) {
-//     console.error("Error uploading to IPFS:", error);
-//     throw error;
-//   }
-// };
