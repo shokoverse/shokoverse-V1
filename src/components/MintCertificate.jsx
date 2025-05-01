@@ -52,7 +52,7 @@ const MintCertificate = ({ account }) => {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 rounded-xl shadow-lg animate-fade-in">
+    <div className="max-w-md mx-auto  border-2 border-blue-950 p-6 rounded-xl shadow-lg animate-fade-in">
       <h2 className="text-2xl font-bold mb-6 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
         Mint Certificate
       </h2>

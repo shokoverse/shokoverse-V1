@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const pinataJWT = import.meta.env.VITE_PINATA_JWT;
-console.log('Pinata JWT:', pinataJWT);
+// console.log('Pinata JWT:', pinataJWT);
 
 export const uploadToIPFS = async (image, certificateName, category, recipient) => {
   try {

@@ -44,7 +44,7 @@ const ConnectWallet = ({ setAccount }) => {
         <Popover>
           {({ open }) => (
             <>
-              <Popover.Button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-purple-700 transition animate-fade-in">
+              <Popover.Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:cursor-pointer text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-purple-700 transition animate-fade-in">
                 {account.slice(0, 6)}...{account.slice(-4)}
               </Popover.Button>
               <Transition
@@ -56,12 +56,12 @@ const ConnectWallet = ({ setAccount }) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Popover.Panel className="absolute z-10 mt-2 w-48 bg-white shadow-lg rounded-lg p-4">
+                <Popover.Panel className="absolute z-10 mt-2 w-full hover:cursor-pointer bg-white shadow-lg rounded-lg">
                   <button
                     onClick={disconnectWallet}
-                    className="w-full text-left text-red-600 hover:text-red-800"
+                    className="w-full p-3.5 hover:cursor-pointer text-red-600 hover:text-red-800"
                   >
-                    Disconnect Wallet
+                    Disconnect
                   </button>
                 </Popover.Panel>
               </Transition>
@@ -71,7 +71,7 @@ const ConnectWallet = ({ setAccount }) => {
       ) : (
         <button
           onClick={connectWallet}
-          className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-purple-700 transition animate-fade-in"
+          className="bg-gradient-to-r from-blue-500 to-purple-600 hover:cursor-pointer text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-purple-700 transition animate-fade-in"
         >
           Connect Wallet
         </button>
