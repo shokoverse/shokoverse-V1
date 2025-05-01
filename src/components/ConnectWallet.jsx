@@ -39,12 +39,12 @@ const ConnectWallet = ({ setAccount }) => {
   }, [setAccount]);
 
   return (
-    <div className="relative">
+    <div className="">
       {account ? (
         <Popover>
           {({ open }) => (
             <>
-              <Popover.Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:cursor-pointer text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-purple-700 transition animate-fade-in">
+              <Popover.Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:cursor-pointer text-white py-2 rounded-lg hover:from-blue-600 hover:to-purple-700 transition animate-fade-in">
                 {account.slice(0, 6)}...{account.slice(-4)}
               </Popover.Button>
               <Transition

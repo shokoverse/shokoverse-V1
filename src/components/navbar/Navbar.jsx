@@ -1,8 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
-import "./navbar.css";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
+import './navbar.css';
 
 const Menu = () => {
   return (
@@ -20,9 +19,9 @@ const Menu = () => {
   );
 };
 
-
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+
   return (
     <div className="shk__navbar">
       <div className="shk__navbar-links">
@@ -34,7 +33,9 @@ const Navbar = () => {
         </div>
       </div>
       <div className="shk__navbar-sign">
-        <button type="button">Get started</button>
+        <Link to="/getstarted">
+          <button type="button">Get started</button>
+        </Link>
       </div>
 
       <div className="shk__navbar-menu">
@@ -57,8 +58,9 @@ const Navbar = () => {
               <Menu />
             </div>
             <div className="shk__navbar-menu_container-links-sign">
-              
-              <button type="button">get started</button>
+              <Link to="/getstarted">
+                <button type="button">Get started</button>
+              </Link>
             </div>
           </div>
         )}
