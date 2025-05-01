@@ -1,0 +1,95 @@
+.shk__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 80rem; /* Matches larger container from previous component */
+    margin: 0 auto;
+  }
+  
+  .shk__cta-image {
+    flex: 1;
+    min-width: 300px; /* Ensure image section doesn't collapse */
+  }
+  
+  .shk__cta-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .shk__cta-content {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .shk__cta-content h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .shk__cta-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .shk__cta-card {
+    display: flex;
+    align-items: center; /* Align icon, text, and button vertically */
+    background-color: #f3f4f6; /* Light background like previous "Before" card */
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 1rem; /* Space between icon, text, and button */
+  }
+  
+  .shk__cta-card-icon {
+    font-size: 2rem; /* Larger icon for prominence */
+    color: #3B82F6; /* Gradient start color */
+  }
+  
+  .shk__cta-card-text {
+    flex: 1; /* Take remaining space */
+  }
+  
+  .shk__cta-card-text h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .shk__cta-card-text p {
+    font-size: 0.875rem;
+    color: #4b5563; /* Neutral gray for text */
+  }
+  
+  .shk__cta-card-button {
+    background: linear-gradient(to right, #3B82F6, #8B5CF6); /* Gradient from previous component */
+    color: #ffffff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .shk__cta-card-button:hover {
+    transform: scale(1.05); /* Slight scale on hover for interactivity */
+  }
+  
+  @media (max-width: 768px) {
+    .shk__cta {
+      flex-direction: column;
+    }
+  
+    .shk__cta-image,
+    .shk__cta-content {
+      min-width: 100%;
+    }
+  }

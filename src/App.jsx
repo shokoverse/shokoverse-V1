@@ -1,9 +1,22 @@
 import React from 'react'
+import './App.css';
+import { Footer, Head, Possibility, WhatSHK} from './containers'
+import { Cta,Navbar} from './components'
 
 const App = () => {
   return (
-    <div className='bg-black text-white'>App</div>
-  )
-}
+    <div className="App">
+      <div className="gradient__bg">
+        <Navbar />
+        <Head />
+      </div>
+      <WhatSHK />   
+      <Possibility/>
+      <Cta />
+      <Footer />
 
-export default App
+    </div>
+  );
+};
+
+export default App;
