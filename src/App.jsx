@@ -2,19 +2,20 @@ import React from 'react'
 import './App.css';
 import { Footer, Head, Possibility, WhatSHK} from './containers'
 import { Cta,Navbar} from './components'
+import LoginApp from './components/LoginApp';
 
-const App = () => {
+
+function App() {
   return (
+
     <div className="App">
-      <div className="gradient__bg">
-        <Navbar />
-        <Head />
-      </div>
+      <Navbar />
+      <Head />
       <WhatSHK />   
       <Possibility/>
       <Cta />
       <Footer />
-
+      {/* <LoginApp/>    */}
     </div>
   );
 };
