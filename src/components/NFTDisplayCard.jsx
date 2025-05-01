@@ -15,7 +15,7 @@ const NFTDisplayCard = ({ nft }) => {
     : "https://via.placeholder.com/150?text=No+Image";
 
   return (
-    <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden transform transition hover:scale-105 hover:shadow-2xl animate-fade-in">
+    <div className="relative w-full sm:w-fit bg-white rounded-2xl shadow-lg overflow-hidden transform transition hover:scale-105 hover:shadow-2xl animate-fade-in">
       {/* Token ID Badge */}
       <div className="absolute top-0 left-1/2 mt-1.5 transform bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-sm py-1 px-3 rounded-full shadow-md">
         Token ID: {tokenId}

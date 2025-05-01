@@ -8,11 +8,11 @@ function LoginApp() {
 
   return (
     <div>
-      <nav className="text-white bg-white p-[1000px]  shadow-lg">
-        <div className="flex justify-between  items-center">
-          <div className="flex">
+      <nav className="text-white bg-white p-4 shadow-lg">
+        <div className="max-w-6xl mx-auto flex justify-between items-center">
+          <div className="flex space-x-6">
             <NavLink
-              to="/"
+              to="/getstarted"
               className="text-lg font-semibold hover:text-blue-300 transition"
             >
               <img src="/logo.png" alt="logo" className="w-[210px]" />
@@ -22,7 +22,7 @@ function LoginApp() {
         </div>
       </nav>
 
-      <div className="h-[90vh] flex bg-gray-100 bg-gradient-to-r from-gray-200 to-gray-300">
+      <div className="sm:h-[90vh] h-full flex bg-gray-100 bg-gradient-to-r from-gray-200 to-gray-300">
         <Routes>
           <Route
             path="/"
@@ -51,15 +51,15 @@ function LoginApp() {
                 <p className="mt-4 text-red-600 text-lg">
                   Choose your role: Institution or Student
                 </p>
-                <div className="grid grid-cols-2 w-full md:w-[400px] mt-5 gap-1.5 px-2.5 m-auto">
+                <div className="grid grid-cols-2 w-full md:w-[400px] mt-5 gap-1.5 px-2.5 m-auto mb-3">
                   <NavLink
-                    to="institution"
+                    to="institution" // Relative path
                     className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-purple-700 animate-fade-in transition"
                   >
                     Institution
                   </NavLink>
                   <NavLink
-                    to="student"
+                    to="student" // Relative path
                     className="shadow-drop-2-center w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-purple-700 animate-fade-in transition"
                   >
                     Student

@@ -1,18 +1,15 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    
-}
 
 body{
-    background: var(--color-bg)
+    background: var(--color-bg);
+    /* max-width: 1490px; */
+    margin: auto;
 }
+
 a{
-    color: unset;
+    
     text-decoration: none;
 }
+
 .gradient__bg{
                   
 

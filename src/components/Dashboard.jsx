@@ -156,20 +156,40 @@ const Dashboard = ({ account, isInstitution }) => {
           No valid certificates found.
         </p>
       ) : (
-        <div className="flex justify-center gap-4">
-         <div class="flex justify-center items-center">
-    <div class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-lg shadow-lg p-6 m-auto">
-      <div className="h-32 -32 rounded-full bg-white text-black font-bold text-center ">
-        Profile</div>      
-      <h2 class="text-2xl font-bold mb-2">User Name:</h2>
-      <p class="text-lg font-medium">Location:</p>
-    </div>
-  </div>
+        <div className="flex flex-col  justify-center gap-4 border-2 w-fit m-auto p-3.5 mt-5 border-purple-500 rounded-2xl">
+
+          <div class="flex justify-center items-center ">
+            <div class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-lg shadow-lg p-6 m-auto w-full">
+              <div className="h-32 -32 rounded-full bg-white text-black font-bold text-center flex justify-center ">
+                <svg
+                  class="w-[100px] h-[100px] text-black text-center m-auto "
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a8.949 8.949 0 0 0 4.951-1.488A3.987 3.987 0 0 0 13 16h-2a3.987 3.987 0 0 0-3.951 3.512A8.948 8.948 0 0 0 12 21Zm3-11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                  />
+                </svg>
+              </div>
+              <h2 class="text-2xl font-bold my-2">User Name:</h2>
+              <p class="text-lg font-medium">UserID:</p>
+            </div>
+          </div>
+
           <div className="flex flex-wrap gap-3.5 ">
             {nfts.map((nft) => (
               <NFTDisplayCard key={nft.tokenId} nft={nft} />
             ))}
           </div>
+
         </div>
       )}
     </div>
