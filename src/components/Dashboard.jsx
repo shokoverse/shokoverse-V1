@@ -21,7 +21,6 @@ const Dashboard = ({ account, isInstitution }) => {
   ];
 
   useEffect(() => {
-    // Reset popout states when account changes
     setUnauthorizedMessage("");
     setWelcomeMessage("");
     setConnectWalletMessage("");
