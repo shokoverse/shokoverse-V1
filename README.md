@@ -37,3 +37,4 @@ https://docs.google.com/presentation/d/108knJdrUN-QwWaYAZf2JCXiZqXxd-8zY/edit?us
 https://www.loom.com/share/dc4d7f4420d44eab846aec7968b97c40?sid=2ef433d8-d0d2-4816-8053-69f82f1cf055
 
 ## FIGMA
+![Screenshot](/public/images/screenshot.png)
