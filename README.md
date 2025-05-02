@@ -17,7 +17,7 @@ Traditional Web2 certification systems create significant challenges for stakeho
 
 Shokoverse uses blockchain to fix Web2 certification flaws, creating a secure, efficient platform for all.
 
-#### ❗ Important
+#### ✅ Important
 - **Tamper-Proof**: **Digital certificates** ensure trust for institutions.
 - **Portable**: **Shareable credentials** empower students.
 - **Instant Verification**: **Immutable records** enable fast, reliable checks for validators.
