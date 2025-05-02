@@ -13,7 +13,7 @@ const Head = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // 3 seconds
+    }, 2500); // 3 seconds
 
     return () => clearInterval(interval); // cleanup on unmount
   }, []);
@@ -25,7 +25,7 @@ const Head = () => {
         <p>Issue, share and verify blockchain-secured credentials with speed, trust and global reach. Built for the institutions of today and the learners of tomorrow</p>
       </div>
 
-      <div className="shk__header-image">
+      <div className="shk__header-image -mt-[100px]">
         <img src={images[currentImageIndex]} alt="Certification Visual" />
       </div>
     </div>
