@@ -12,8 +12,6 @@ Traditional Web2 certification systems create significant challenges for stakeho
 - **Non-Portable**: Platform-specific or non-digital credentials limit shareability and access for students.
 - **Verification Delays**: Slow, manual validation processes reliant on third parties hinder efficiency for validators.
 
-## SOLUTION
-Shokoverse uses blockchain to fix Web2 certification flaws, creating a secure, efficient platform for all.
 
 ## SOLUTION
 
