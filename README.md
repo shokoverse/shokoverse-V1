@@ -24,21 +24,19 @@ Traditional Web2 certification systems face significant challenges for stakehold
 Shokoverse addresses these issues with a secure, transparent, and scalable blockchain solution, empowering all stakeholders in the global certification ecosystem.
 
 ## SOLUTION
-## Shokoverse: Solving Web2 Certification Issues
-
 Shokoverse leverages blockchain to resolve Web2 certification flaws, delivering a secure, efficient platform for all stakeholders.
 
-### For Institutions
+#### 1. For Institutions
 - **Anti-Fraud**: **Tamper-proof digital certificates** ensure trust.
 - **Cost-Effective**: **Automated blockchain** cuts issuance costs.
 - Global Reach: Interoperable credentials for worldwide recognition.
 
-### For Students
+#### 2. For Students
 - **Portable**: **Shareable digital credentials** under student control.
 - **Instant Verification**: **Real-time validation** for opportunities.
 - Ownership: Full control over trusted achievements.
 
-### For Validators
+#### 3. For Validators
 - **Fast Verification**: **Instant, reliable checks** without intermediaries.
 - **Trusted**: **Immutable blockchain records** ensure authenticity.
 - Efficient: Unified system simplifies global validation.
