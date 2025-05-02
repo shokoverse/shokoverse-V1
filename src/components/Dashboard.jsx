@@ -205,7 +205,7 @@ const Dashboard = ({ account, isInstitution }) => {
   };
 
   return (
-    <div className="h-[90vh] w-full py-8">
+    <div className="md:h-[90vh] h-full w-full py-8">
       <h2 className="text-3xl font-bold text-center mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-fade-in">
         {isInstitution ? "Institution Dashboard" : "Student Dashboard"}
       </h2>

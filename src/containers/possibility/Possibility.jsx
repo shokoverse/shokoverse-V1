@@ -3,7 +3,7 @@ import { FaBinoculars, FaUserGraduate, FaBuilding } from 'react-icons/fa';
 import './possibility.css';
 
 const Possibility = () => (
-  <section className="shk__possibility section__padding">
+  <section className="shk__possibility section__padding" id='credentials'>
     <h2 className="shk__possibility-title gradient__text">The World of Credentials and Trust</h2>
     <div className="shk__possibility-content">
       {/* BEFORE SHOKOVERSE */}

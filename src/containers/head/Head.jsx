@@ -25,7 +25,7 @@ const Head = () => {
         <p>Issue, share and verify blockchain-secured credentials with speed, trust and global reach. Built for the institutions of today and the learners of tomorrow</p>
       </div>
 
-      <div className="shk__header-image -mt-[100px]">
+      <div className="shk__header-image md:-mt-[100px]">
         <img src={images[currentImageIndex]} alt="Certification Visual" />
       </div>
     </div>

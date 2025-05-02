@@ -15,7 +15,7 @@ function LoginApp() {
               to="/getstarted"
               className="text-lg font-semibold hover:text-blue-300 transition"
             >
-              <img src="/logo.png" alt="logo" className="w-[210px]" />
+              <img src="/logo.png" alt="logo" className="md:-[210px] w-[160px]" />
             </NavLink>
           </div>
           <ConnectWallet setAccount={setAccount} />
