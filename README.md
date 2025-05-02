@@ -1,9 +1,9 @@
-# SHOKOVERSE: BLOCKCHAIN-BASED CERTIFICATION DAPP
+# SHOKOVERSE
 
 ## OVERVIEW
 Shokoverse redefines certification with blockchain, ensuring credibility and efficiency. Providers issue secure, verifiable digital certificates, enhancing trust. Recipients share achievements easily, while employers verify credentials instantly. Designed for a digital world, Shokoverse delivers transparency, scalability, and trust, modernizing global certification.
 
-## PROBLEMS WITH WEB2 CERTIFICATES
+## PROBLEMS
 Traditional Web2 certification systems face significant challenges for stakeholders:
 
 ### For Institutions:
