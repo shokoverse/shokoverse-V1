@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import './head.css';
 
 const images = [
-  '/images/digital cert.png',
-  '/images/images.jpeg',
-  '/images/validator.jpeg',
+  '/images/education.png',
+  '/images/blockchain.png',
+  '/images/trust.png',
 ];
 
 const Head = () => {
@@ -13,13 +13,13 @@ const Head = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // 3 seconds
+    }, 5000); // 3 seconds
 
     return () => clearInterval(interval); // cleanup on unmount
   }, []);
 
   return (
-    <div className="shk__header section__padding" id="home">
+    <div className="shk__header section__padding pt-0" id="home">
       <div className="shk__header-content">
         <h1 className="gradient__text">A New Standard For Digital Certification</h1>
         <p>Issue, share and verify blockchain-secured credentials with speed, trust and global reach. Built for the institutions of today and the learners of tomorrow</p>

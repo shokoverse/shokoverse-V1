@@ -7,8 +7,8 @@ const Footer = () => {
     <div className="shk__footer section__padding">
       <div className="shk__footer-links">
         <div className="shk__footer-links_logo">
-          <h1>HooBank</h1>
-          <p>A new way to make the payments easy, reliable and secure.</p>
+          <img src="/logo.png" alt="" className="w-[240px]" />
+          <h3 className="mt-3.5">Where Achievements live forever.</h3>
         </div>
         <div className="shk__footer-links_div">
           <h4>Useful Links</h4>
@@ -29,14 +29,14 @@ const Footer = () => {
         <div className="shk__footer-links_div">
           <h4>Follow Us</h4>
           <div className="shk__footer-socials">
+            <a href="https://x.com/Shokoverse_HQ" target="_blank"><FaTwitter className="shk__footer-social_icon" /></a>
             <FaFacebookF className="shk__footer-social_icon" />
-            <FaTwitter className="shk__footer-social_icon" />
             <FaInstagram className="shk__footer-social_icon" />
           </div>
         </div>
       </div>
       <div className="shk__footer-copyright">
-        <p>© 2025 HooBank. All rights reserved.</p>
+        <p>© 2025 ShokoVerse. All rights reserved.</p>
       </div>
     </div>
   );

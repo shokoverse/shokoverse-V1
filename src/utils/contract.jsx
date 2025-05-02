@@ -2,7 +2,7 @@ import { ethers } from "ethers";
 import CertificateNFTABI from "./CertificateNFT.json";
 
 const contractAddress = import.meta.env.VITE_CONTRACT_ADDRESS;
-console.log(contractAddress);
+// console.log(contractAddress);
 
 
 export const getContract = async () => {

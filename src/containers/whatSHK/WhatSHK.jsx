@@ -3,13 +3,12 @@ import Feature from '../../components/feature/Feature';
 import "./whatSHK.css";
 
 const WhatSHK = () => (
-  <div className="shk__whatshk section__margin" id="wshk">
+  <div className="shk__whatshk section__margin rounded-4xl" id="wshk">
     <div className="shk__whatshk-feature">
       <Feature title="What is SHOKOVERSE"  />
     </div>
     <div className="shk__whatshk-heading">
       <h1 className="gradient__text">The possibilities are beyond your imagination</h1>
-      <p>Explore the Library</p>
     </div>
     <div className="shk__whatshk-container">
       <Feature title="Revolutionizes" text="Shokoverse transforms traditional certification by leveraging blockchain technology to elevate credibility, modernize credential processes and connect all participants in the evolving landscape of global recognition." />
