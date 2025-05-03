@@ -182,7 +182,7 @@ const Dashboard = ({ account, isInstitution }) => {
     if (isInstitution && (connectWalletMessage || unauthorizedMessage)) {
       const timer = setTimeout(() => {
         navigate("/getstarted");
-      }, 3000);
+      }, 2000);
       return () => clearTimeout(timer);
     }
   }, [connectWalletMessage, unauthorizedMessage, isInstitution, navigate]);
