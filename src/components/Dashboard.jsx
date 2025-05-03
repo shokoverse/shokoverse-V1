@@ -16,7 +16,7 @@ const Dashboard = ({ account, isInstitution }) => {
   // Array of authorized wallet addresses for institution route
   const authorizedWallets = [
     "0x43d9F129426b82759C0206BEcf400aAc024Bf5ED",
-    "0xabcdef1234567890abcdef1234567890abcdef12",
+    "0x98B9b68296911Ae4fBf1de856930642dab922dbd",
     "0x7890abcdef1234567890abcdef1234567890abcd",
   ];
 
