@@ -21,7 +21,7 @@ const CTA = () => (
         <div className="shk__cta-card">
           <FaUserGraduate className="shk__cta-card-icon" />
           <div className="shk__cta-card-text">
-            <h3>Institution</h3>
+            <h3>Student</h3>
             <p>Empower learners to showcase their achievements globally.</p>
           </div>
           <button className="shk__cta-card-button">Learn More</button>
@@ -29,7 +29,7 @@ const CTA = () => (
         <div className="shk__cta-card">
           <FaBinoculars className="shk__cta-card-icon" />
           <div className="shk__cta-card-text">
-            <h3>Institution</h3>
+            <h3>Validator</h3>
             <p>Verify credentials instantly with confidence and ease.</p>
           </div>
           <button className="shk__cta-card-button">Learn More</button>
