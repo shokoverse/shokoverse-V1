@@ -35,9 +35,9 @@ Shokoverse uses blockchain to fix Web2 certification flaws, creating a secure, e
 
 ## SHOKOVERSE CONTRACT ADDRESS
 
-0x9587d74C61F151D3E57331a19Af267Ca87cA2351
+0x26b2EBF5182f336f9D948acFBe703566dAF4d3a5
 
-https://sepolia.etherscan.io/address/0x9587d74C61F151D3E57331a19Af267Ca87cA2351
+https://sepolia.basescan.org/address/0x26b2EBF5182f336f9D948acFBe703566dAF4d3a5
 
 ## PITCH DECK
 
