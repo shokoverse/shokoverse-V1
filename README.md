@@ -32,6 +32,9 @@ Shokoverse uses blockchain to fix Web2 certification flaws, creating a secure, e
 5. `CertNFT_isNot_Transferable`
 6. `Secure_Immutable_Transparent`
 
+## LIVE LINK
+https://deafening-application-whispering.on-fleek.app/
+
 
 ## SHOKOVERSE CONTRACT ADDRESS
 
@@ -49,3 +52,6 @@ https://www.loom.com/share/dc4d7f4420d44eab846aec7968b97c40?sid=2ef433d8-d0d2-48
 
 ## FIGMA
 ![Screenshot](/public/images/screenshot.png)
+
+## TWITTER HANDLE
+https://x.com/Shokoverse_HQ
