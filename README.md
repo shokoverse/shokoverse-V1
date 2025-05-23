@@ -8,7 +8,7 @@ Shokoverse redefines certification with blockchain, ensuring credibility and eff
 
 Traditional Web2 certification systems create significant challenges for stakeholders in the credential ecosystem.
 
-#### ❗ Important
+####  Important
 - **Fraud Risk**: Certificates are easily forged, undermining trust and credibility for institutions.
 - **Non-Portable**: Platform-specific or non-digital credentials limit shareability and access for students.
 - **Verification Delays**: Slow, manual validation processes reliant on third parties hinder efficiency for validators.
@@ -33,7 +33,7 @@ Shokoverse uses blockchain to fix Web2 certification flaws, creating a secure, e
 6. `Secure_Immutable_Transparent`
 
 ## LIVE LINK
-https://deafening-application-whispering.on-fleek.app/
+https://shokoverse.xyz
 
 
 ## SHOKOVERSE CONTRACT ADDRESS
